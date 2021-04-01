@@ -29,11 +29,11 @@ canidatelist = list(canidate.keys())
 maxvotes = 0
 maxcanidate = ""
 
-analysispath = os.path.join( "Analysis", "Pybankfile.txt")
-Pybankfile = open(analysispath, "w")
+analysispath = os.path.join( "Analysis", "PyPollAnalysis.txt")
+PyPollAnalysis = open(analysispath, "w")
 
 print(f"Election Results \n------------------------ \nTotal Votes: {totalvotes}\n")
-Pybankfile.write(f"Election Results \n------------------------ \nTotal Votes: {totalvotes}\n")
+PyPollAnalysis.write(f"Election Results \n------------------------ \nTotal Votes: {totalvotes}\n")
 
 for x in range(len(canidatelist)):
 	
@@ -42,7 +42,7 @@ for x in range(len(canidatelist)):
 	canidatenamefinal = (str([canidatelist[x]])).strip("[]")
 
 	print (f"{canidatenamefinal}: {percentvote}% ({numberofvotes})")
-	Pybankfile.write(f"{canidatenamefinal}: {percentvote}% ({numberofvotes})\n")
+	PyPollAnalysis.write(f"{canidatenamefinal}: {percentvote}% ({numberofvotes})\n")
 
 	if (numberofvotes > maxvotes):
 		#calculates who won
@@ -51,5 +51,5 @@ for x in range(len(canidatelist)):
 	else:
 		continue
 print(f"------------------------- \n Winner: {maxcanidate} \n-------------------------")
-Pybankfile.write(f"------------------------- \n Winner: {maxcanidate} \n-------------------------\n")
-Pybankfile.close()
+PyPollAnalysis.write(f"------------------------- \n Winner: {maxcanidate} \n-------------------------\n")
+PyPollAnalysis.close()
