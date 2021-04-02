@@ -32,11 +32,13 @@ maxcanidate = ""
 analysispath = os.path.join( "Analysis", "PyPollAnalysis.txt")
 PyPollAnalysis = open(analysispath, "w")
 
+############# Printing Answers #############
+
 print(f"Election Results \n------------------------ \nTotal Votes: {totalvotes}\n")
 PyPollAnalysis.write(f"Election Results \n------------------------ \nTotal Votes: {totalvotes}\n")
 
 for x in range(len(canidatelist)):
-	
+	#prints out all the canidates
 	numberofvotes = len(canidate[canidatelist[x]])
 	percentvote = "{0:.3%}".format(round((numberofvotes / totalvotes), 3))
 	canidatenamefinal = (str([canidatelist[x]])).strip("[]")
